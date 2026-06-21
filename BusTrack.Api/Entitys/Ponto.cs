@@ -5,4 +5,5 @@ public class Ponto {
     public required string Nome { get; set; }
     public decimal Latitude { get; set; }
     public decimal Longitude { get; set; }
+    public List<Trajeto> Trajetos = [];
 }
