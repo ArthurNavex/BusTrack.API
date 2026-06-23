@@ -9,9 +9,9 @@ public class BusTrackContext : DbContext
 
     }
 
-    DbSet<Usuario> Usuarios {get; set;}
-    DbSet<Linha> Linhas {get; set;}
-    DbSet<Ponto> Pontos {get; set;}
-    DbSet<Trajeto> Trajetos {get; set;}
-    DbSet<Favorito> Favoritos {get; set;}
+    public DbSet<Usuario> Usuarios {get; set;}
+    public DbSet<Linha> Linhas {get; set;}
+    public DbSet<Ponto> Pontos {get; set;}
+    public DbSet<Trajeto> Trajetos {get; set;}
+    public DbSet<Favorito> Favoritos {get; set;}
 }
