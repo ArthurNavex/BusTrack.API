@@ -29,4 +29,22 @@ public class LinhasController : ControllerBase {
 
         return Ok(LinhaCriada);
     }
+
+    [HttpGet]
+    public IActionResult Get () {
+
+        var linhas = _context.Linhas.ToList();
+        var response = new List<LinhaResponse>();
+
+        foreach (var linha in linhas) {
+
+            response.Add(new LinhaResponse{
+                Id = linha.Id,
+                Nome = linha.Nome,
+                Numero = linha.Numero
+            });
+        }
+
+        return Ok(response);
+    }
 }

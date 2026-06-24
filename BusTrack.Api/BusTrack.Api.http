@@ -4,3 +4,11 @@ GET {{BusTrack.Api_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+POST http://localhost:5242/api/linhas
+Content-Type: application/json
+
+{
+  "numero": 302,
+  "nome": "Universitário"
+}
