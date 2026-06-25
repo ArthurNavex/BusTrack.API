@@ -47,4 +47,25 @@ public class LinhasController : ControllerBase {
 
         return Ok(response);
     }
+
+    [HttpGet ("{id}")]
+    public IActionResult GetIndice (int id) {
+
+        var linha = _context.Linhas.FirstOrDefault(p => p.Id == id);
+
+        if (linha == null) {
+
+            return NotFound();
+        }
+        
+        var response = new LinhaResponse {
+            Id = linha.Id,
+            Nome = linha.Nome,
+            Numero = linha.Numero
+        };
+        
+
+        return Ok(response);
+    }
+
 }
