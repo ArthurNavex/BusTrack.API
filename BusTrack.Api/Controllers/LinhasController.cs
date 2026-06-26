@@ -51,7 +51,7 @@ public class LinhasController : ControllerBase {
     [HttpGet ("{id}")]
     public IActionResult GetIndice (int id) {
 
-        var linha = _context.Linhas.FirstOrDefault(p => p.Id == id);
+        var linha = _context.Linhas.FirstOrDefault(linha => linha.Id == id);
 
         if (linha == null) {
 
@@ -67,5 +67,31 @@ public class LinhasController : ControllerBase {
 
         return Ok(response);
     }
+
+    [HttpPut ("{id}")]
+
+    public IActionResult Put(UpdateLinhaRequest request, int id) {
+
+        var linha = _context.Linhas.FirstOrDefault(linha => linha.Id == id);
+
+        if (linha == null) {
+            return NotFound();
+        }
+
+        linha.Nome = request.Nome;
+        linha.Numero = request.Numero;
+        
+        _context.Linhas.Update(linha);
+        _context.SaveChanges();
+
+        var response = new LinhaResponse{
+            Id = linha.Id,
+            Nome = linha.Nome,
+            Numero = linha.Numero
+        };
+        
+        return Ok(response);
+    }
+    
 
 }
