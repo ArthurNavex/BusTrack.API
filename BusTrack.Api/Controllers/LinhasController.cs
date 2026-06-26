@@ -93,5 +93,18 @@ public class LinhasController : ControllerBase {
         return Ok(response);
     }
     
+    [HttpDelete ("{id}")]
+    public IActionResult Delete(int id) {
+        var linha = _context.Linhas.FirstOrDefault(linha => linha.Id == id);
+
+        if (linha == null) {
+            return NotFound();
+        }
+
+        _context.Linhas.Remove(linha);
+        _context.SaveChanges();
+
+        return NoContent();
+    }
 
 }

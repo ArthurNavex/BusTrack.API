@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BusTrack.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9440c6ee60901d194262267b0305bc6988514c41")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1fd77a0e310366024ea1384f0218d5b233f8a76e")]
 [assembly: System.Reflection.AssemblyProductAttribute("BusTrack.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BusTrack.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
