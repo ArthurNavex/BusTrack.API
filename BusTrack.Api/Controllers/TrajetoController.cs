@@ -121,11 +121,20 @@ public class TrajetoController : ControllerBase
 
         var trajetoExiste = _context.Trajetos.Any(trajeto => trajeto.LinhaId == request.LinhaId && trajeto.PontoId == request.PontoId
         && trajeto.Id != id);
+        var ordemExiste = _context.Trajetos.Any(trajeto =>
+            trajeto.LinhaId == request.LinhaId && trajeto.Ordem == request.Ordem
+        );
 
         if(trajeto == null)
         {
             return NotFound();
         }
+
+        if (ordemExiste)
+        {
+            return BadRequest("Já existe um ponto nessa ordem para essa linha.");
+        }
+
 
         if (trajetoExiste)
         {
